@@ -1,0 +1,7 @@
+/tmp
+/.settings
+/test-result
+/eclipse
+.project
+.classpath
+.DS_Store
