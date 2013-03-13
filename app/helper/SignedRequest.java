@@ -41,9 +41,9 @@ public class SignedRequest {
 
     public SignedRequest() {
         try {
-            this.awsAccessKeyId = Play.configuration.getProperty("awsAccessKeyId");
-            this.awsSecretKey = Play.configuration.getProperty("awsSecretKey");
-            this.associateTag = Play.configuration.getProperty("associateTag");
+            this.awsAccessKeyId = System.getProperty("awsAccessKeyId");
+            this.awsSecretKey = System.getProperty("awsSecretKey");
+            this.associateTag = System.getProperty("associateTag");
             byte[] secretyKeyBytes = awsSecretKey.getBytes(UTF8_CHARSET);
             secretKeySpec = new SecretKeySpec(secretyKeyBytes, HMAC_SHA256_ALGORITHM);
             mac = Mac.getInstance(HMAC_SHA256_ALGORITHM);
