@@ -33,6 +33,7 @@ public class Application extends Controller {
         
         Map<String, String> item = new HashMap<String, String>();
         item.put("title", XPath.selectText("ItemAttributes/Title", node));
+        item.put("company", XPath.selectText("ItemAttributes/Label", node));
         item.put("image", XPath.selectText("MediumImage/URL", node));
         item.put("price", XPath.selectText("OfferSummary/LowestNewPrice/Amount", node));
         renderJSON(new Gson().toJson(item));
