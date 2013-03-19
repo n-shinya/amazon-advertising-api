@@ -36,6 +36,7 @@ public class Application extends Controller {
         item.put("company", XPath.selectText("ItemAttributes/Label", node));
         item.put("image", XPath.selectText("MediumImage/URL", node));
         item.put("price", XPath.selectText("OfferSummary/LowestNewPrice/Amount", node));
+        item.put("formattedPrice", XPath.selectText("OfferSummary/LowestNewPrice/FormattedPrice", node));
         renderJSON(new Gson().toJson(item));
     }
 
